@@ -4,4 +4,9 @@
     <string name="welcomeMessage">Bienvenido a la aplicación de restaurantes</string>
     <string name="login">Ingresar</string>
     <string name="register">Registrarse</string>
+
+    <string name="registerTitle">Registre sus datos</string>
+    <string name="emailUser">Email</string>
+    <string name="nameUser">Nombre</string>
+    <string name="passwordUser">Contraseña</string>
 </resources>

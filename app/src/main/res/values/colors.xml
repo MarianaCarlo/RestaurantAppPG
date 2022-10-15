@@ -10,4 +10,5 @@
 
     <color name="custom">#58B55B</color>
     <color name="dark">#4E4949</color>
+    <color name="light">#FF9900</color>
 </resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/working"
+        android:id="@+id/working"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/working"
+        android:layout_centerHorizontal="true"
+        android:text="@string/registerTitle"
+        android:textColor="@color/dark"
+        android:textSize="24dp"
+        android:id="@+id/titleRegister"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/titleRegister"
+        android:text="@string/emailUser"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"
+        android:id="@+id/textEmail"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:paddingVertical="10dp"
+        android:paddingLeft="20dp"
+        android:layout_below="@+id/textEmail"
+        android:hint="Ej restaurant@gmail.com"
+        android:background="@drawable/backwithborder"
+        android:id="@+id/editEmail"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/editEmail"
+        android:text="@string/nameUser"
+        android:textSize="20sp"
+        android:id="@+id/textName"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:paddingVertical="10dp"
+        android:paddingLeft="20dp"
+        android:layout_below="@+id/textName"
+        android:hint="Ej Mariana Carlo"
+        android:background="@drawable/backwithborder"
+        android:id="@+id/editName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/editName"
+        android:text="@string/passwordUser"
+        android:textSize="20sp"
+        android:inputType="textPersonName"
+        android:id="@+id/textPassword"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:paddingVertical="10dp"
+        android:paddingLeft="20dp"
+        android:layout_below="@+id/textPassword"
+        android:hint="Ej pass123"
+        android:inputType="textPassword"
+        android:background="@drawable/backwithborder"
+        android:id="@+id/editPassword"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="20dp"
+        android:layout_below="@+id/editPassword"
+        android:backgroundTint="@color/custom"
+        android:text="@string/register"
+        android:textColor="@color/dark"
+        app:cornerRadius="23dp"
+        android:id="@+id/btnSendRegister"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        />
+
+</RelativeLayout>
