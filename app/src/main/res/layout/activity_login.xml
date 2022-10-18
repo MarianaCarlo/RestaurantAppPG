@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/tea"
+        android:id="@+id/teaLogin"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/teaLogin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/loginTitle"
+        android:textColor="@color/dark"
+        android:textSize="24dp"
+        android:id="@+id/titleLogin"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/titleLogin"
+        android:text="@string/mailTitleLogin"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"
+        android:id="@+id/textEmailLogin"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:paddingVertical="10dp"
+        android:paddingLeft="20dp"
+        android:layout_below="@+id/textEmailLogin"
+        android:hint="Ej restaurant@gmail.com"
+        android:background="@drawable/backwithborder"
+        android:id="@+id/editEmailLogin"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/editEmailLogin"
+        android:text="@string/passwordUser"
+        android:textSize="20sp"
+        android:id="@+id/passwordLogin"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:paddingVertical="10dp"
+        android:paddingLeft="20dp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/passwordLogin"
+        android:hint="Ej 123456"
+        android:background="@drawable/backwithborder"
+        android:id="@+id/editPasswordLogin"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:paddingHorizontal="50dp"
+        android:layout_below="@+id/editPasswordLogin"
+        android:backgroundTint="@color/custom"
+        android:text="@string/login"
+        android:textColor="@color/dark"
+        app:cornerRadius="23dp"
+        android:id="@+id/btnSendLogin"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBarLogin"
+        />
+
+</RelativeLayout>

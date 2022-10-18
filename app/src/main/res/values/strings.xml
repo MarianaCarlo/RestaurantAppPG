@@ -9,4 +9,8 @@
     <string name="emailUser">Email</string>
     <string name="nameUser">Nombre</string>
     <string name="passwordUser">Contraseña</string>
+
+    <string name="loginTitle">Inicio de sesión</string>
+    <string name="mailTitleLogin">Correo electrónico</string>
+
 </resources>
