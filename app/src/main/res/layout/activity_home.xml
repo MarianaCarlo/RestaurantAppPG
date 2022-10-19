@@ -9,16 +9,53 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Activity"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:id="@+id/tittleHome"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Email Adress"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/tittleHome"
+        android:id="@+id/emailAddressTittle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/emailAddressTittle"
+        android:id="@+id/emailAddress"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Full Name"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/emailAddress"
+        android:id="@+id/nameTittle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/nameTittle"
+        android:id="@+id/name"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGOUT"
-        android:layout_below="@+id/tittleHome"
+        android:layout_below="@+id/name"
         android:textSize="30dp"
+        android:layout_marginTop="70dp"
         android:layout_centerInParent="true"
         android:id="@+id/sendLogout"/>
 
