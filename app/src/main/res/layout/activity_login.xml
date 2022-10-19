@@ -70,6 +70,16 @@
         android:background="@drawable/backwithborder"
         android:id="@+id/editPasswordLogin"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/forgotPassword"
+        android:layout_below="@+id/editPasswordLogin"
+        android:textStyle="bold"
+        android:id="@+id/sendForgotPassword"/>
+
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
@@ -77,7 +87,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:paddingHorizontal="50dp"
-        android:layout_below="@+id/editPasswordLogin"
+        android:layout_below="@+id/sendForgotPassword"
         android:backgroundTint="@color/custom"
         android:text="@string/login"
         android:textColor="@color/dark"

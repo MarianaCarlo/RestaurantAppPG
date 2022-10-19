@@ -13,4 +13,8 @@
     <string name="loginTitle">Inicio de sesión</string>
     <string name="mailTitleLogin">Correo electrónico</string>
 
+    <string name="forgotPassword">¿Olvidaste tu constraseña?</string>
+    <string name="forgotPasswordText">Introduce tu correo:</string>
+    <string name="resetPassword">Resetear Contraseña</string>
+
 </resources>

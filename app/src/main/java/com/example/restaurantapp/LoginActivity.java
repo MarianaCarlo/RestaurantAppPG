@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editEmailLogin, editPasswordLogin;
     private Button buttonSendLogin;
     private ProgressBar progressBarLogin;
+    private TextView sendForgotPassword;
 
     private FirebaseAuth mAuth;
 
@@ -36,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonSendLogin = findViewById(R.id.btnSendLogin);
         progressBarLogin = findViewById(R.id.progressBarLogin);
         mAuth = FirebaseAuth.getInstance();
+        sendForgotPassword = findViewById(R.id.sendForgotPassword);
 
         buttonSendLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +92,14 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+
+        sendForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+                startActivity(intent);
             }
         });
     }
