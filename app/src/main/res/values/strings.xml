@@ -16,5 +16,7 @@
     <string name="forgotPassword">¿Olvidaste tu constraseña?</string>
     <string name="forgotPasswordText">Introduce tu correo:</string>
     <string name="resetPassword">Resetear Contraseña</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

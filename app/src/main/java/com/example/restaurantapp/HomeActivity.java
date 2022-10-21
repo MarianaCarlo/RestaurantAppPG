@@ -5,12 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.restaurantapp.fragments.AnnouncementsFragment;
+import com.example.restaurantapp.fragments.FoodFragment;
+import com.example.restaurantapp.fragments.HomeFragment;
+import com.example.restaurantapp.fragments.SubscriptionFragment;
 import com.example.restaurantapp.models.User;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -21,56 +28,41 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private FirebaseUser user;
-    private DatabaseReference reference;
+    //private var home_fm = HomeFragment();
 
-    private String userID;
-
-    private Button buttonLogout;
+    BottomNavigationView bottomNavigationView;
+    HomeFragment homeFragment = new HomeFragment();
+    SubscriptionFragment subscriptionFragment = new SubscriptionFragment();
+    FoodFragment foodFragment = new FoodFragment();
+    AnnouncementsFragment announcementsFragment = new AnnouncementsFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        buttonLogout = findViewById(R.id.sendLogout);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
 
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
-
-        final TextView welcome = findViewById(R.id.tittleHome);
-        final TextView emailTextView = findViewById(R.id.emailAddress);
-        final TextView nameTextView = findViewById(R.id.name);
-
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User userProfile = snapshot.getValue(User.class);
-
-                if (userProfile != null) {
-                    String email = userProfile.email;
-                    String fullName = userProfile.name;
-
-                    welcome.setText("Welcome, " + fullName + "!");
-                    emailTextView.setText(email);
-                    nameTextView.setText(fullName);
-
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.ic_home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
+                        return true;
+                    case R.id.ic_subscription:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,subscriptionFragment).commit();
+                        return true;
+                    case R.id.ic_food:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,foodFragment).commit();
+                        return true;
+                    case R.id.ic_announcement:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,announcementsFragment).commit();
+                        return true;
                 }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(HomeActivity.this, "Something wrong happened", Toast.LENGTH_SHORT).show();
+                return false;
             }
         });
 

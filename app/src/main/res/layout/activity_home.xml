@@ -6,57 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:id="@+id/tittleHome"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container"
+        />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Email Adress"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/tittleHome"
-        android:id="@+id/emailAddressTittle"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/emailAddressTittle"
-        android:id="@+id/emailAddress"/>
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu"
+        android:background="@color/custom"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Full Name"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/emailAddress"
-        android:id="@+id/nameTittle"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/nameTittle"
-        android:id="@+id/name"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGOUT"
-        android:layout_below="@+id/name"
-        android:textSize="30dp"
-        android:layout_marginTop="70dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/sendLogout"/>
 
 </RelativeLayout>
