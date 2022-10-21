@@ -14,4 +14,14 @@
         android:text="home fragment"
         android:id="@+id/home_fragment"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PERFIL"
+        android:layout_below="@+id/home_fragment"
+        android:textSize="30dp"
+        android:layout_marginTop="70dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/sendProfile"/>
+
 </RelativeLayout>
