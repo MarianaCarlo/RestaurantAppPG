@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/working"
+        android:src="@drawable/img_register"
         android:id="@+id/working"
         />
 
@@ -20,17 +20,17 @@
         android:layout_centerHorizontal="true"
         android:text="@string/registerTitle"
         android:textColor="@color/dark"
-        android:textSize="24dp"
+        android:textSize="22dp"
         android:id="@+id/titleRegister"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:layout_marginLeft="30dp"
         android:layout_below="@+id/titleRegister"
         android:text="@string/emailUser"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:inputType="textEmailAddress"
         android:id="@+id/textEmail"/>
 
@@ -50,11 +50,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:layout_marginLeft="30dp"
         android:layout_below="@+id/editEmail"
         android:text="@string/nameUser"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:id="@+id/textName"/>
 
     <EditText
@@ -72,11 +72,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:layout_marginLeft="30dp"
         android:layout_below="@+id/editName"
         android:text="@string/passwordUser"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:inputType="textPersonName"
         android:id="@+id/textPassword"/>
 

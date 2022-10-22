@@ -19,6 +19,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText editEmailLogin, editPasswordLogin;
@@ -47,25 +50,25 @@ public class LoginActivity extends AppCompatActivity {
                 String password = editPasswordLogin.getText().toString().trim();
 
                 if (email.isEmpty()) {
-                    editEmailLogin.setError("Email is required!");
+                    editEmailLogin.setError("¡El correo es requerido!");
                     editEmailLogin.requestFocus();
                     return;
                 }
 
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    editEmailLogin.setError("Please enter a valid email");
+                    editEmailLogin.setError("¡Por favor ingresa un correo válido!");
                     editEmailLogin.requestFocus();
                     return;
                 }
 
                 if (password.isEmpty()) {
-                    editPasswordLogin.setError("Password is required");
+                    editPasswordLogin.setError("¡La contraseña es requerida!");
                     editPasswordLogin.requestFocus();
                     return;
                 }
 
-                if (password.length() < 6) {
-                    editPasswordLogin.setError("Min password length is 6 characters");
+                if (password.length() < 8) {
+                    editPasswordLogin.setError("Contraseña mínima de 8 caracteres");
                     editPasswordLogin.requestFocus();
                     return;
                 }

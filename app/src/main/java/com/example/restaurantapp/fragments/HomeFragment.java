@@ -10,8 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.restaurantapp.ProfileActivity;
 import com.example.restaurantapp.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +27,8 @@ import com.example.restaurantapp.R;
 public class HomeFragment extends Fragment {
 
     private Button buttonProfile;
+
+    //int[] images = {R.drawable.sandwiches, R.drawable.sushi, R.drawable.burger};
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,6 +85,16 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        ImageSlider imageSlider = viewRoot.findViewById(R.id.sliderImages);
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.burger, null));
+        slideModels.add(new SlideModel(R.drawable.sandwiches, null));
+        slideModels.add(new SlideModel(R.drawable.sushi, null));
+        imageSlider.setImageList(slideModels, ScaleTypes.CENTER_CROP);
+
+
+
         return viewRoot;
     }
 }

@@ -18,6 +18,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -46,19 +49,19 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = editPassword.getText().toString().trim();
 
                 if (email.isEmpty()) {
-                    editEmail.setError("Mail is required!");
+                    editEmail.setError("¡El correo es requerido!");
                     editEmail.requestFocus();
                     return;
                 }
 
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    editEmail.setError("Please provide valid email");
+                    editEmail.setError("¡Por favor ingresa un correo válido!");
                     editEmail.requestFocus();
                     return;
                 }
 
                 if (name.isEmpty()) {
-                    editName.setError("Full name is required!");
+                    editName.setError("Nombre de usuario es requerido!");
                     editName.requestFocus();
                     return;
                 }
@@ -66,13 +69,22 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 if (password.isEmpty()) {
-                    editPassword.setError("Password is required!");
+                    editPassword.setError("¡La contraseña es requerida!");
                     editPassword.requestFocus();
                     return;
                 }
 
-                if (password.length() < 6) {
-                    editPassword.setError("Min password length should be 6 charaters!");
+                if (password.length() < 8) {
+                    editPassword.setError("Contraseña mínima de 8 caracteres!");
+                    editPassword.requestFocus();
+                    return;
+                }
+
+                final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
+                Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+                Matcher matcher = pattern.matcher(password);
+                if (!matcher.matches()) {
+                    editPassword.setError("La contraseña debe contener 1 mayuscula, 1 número, 1 caracter especial");
                     editPassword.requestFocus();
                     return;
                 }
