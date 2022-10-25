@@ -3,18 +3,29 @@ package com.example.restaurantapp.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.restaurantapp.ProfileActivity;
 import com.example.restaurantapp.R;
+import com.example.restaurantapp.models.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +38,11 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private Button buttonProfile;
+
+    private FirebaseUser user;
+    private DatabaseReference reference;
+
+    private String userID;
 
     //int[] images = {R.drawable.sandwiches, R.drawable.sushi, R.drawable.burger};
 
@@ -77,7 +93,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false);
         View viewRoot = inflater.inflate(R.layout.fragment_home, container, false);
-        buttonProfile = viewRoot.findViewById(R.id.sendProfile);
+        buttonProfile = viewRoot.findViewById(R.id.btnProfile);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,13 +102,39 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //SLIDES OF IMAGES
         ImageSlider imageSlider = viewRoot.findViewById(R.id.sliderImages);
         List<SlideModel> slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.burger, null));
         slideModels.add(new SlideModel(R.drawable.sandwiches, null));
         slideModels.add(new SlideModel(R.drawable.sushi, null));
-        imageSlider.setImageList(slideModels, ScaleTypes.CENTER_CROP);
+        imageSlider.setImageList(slideModels    , ScaleTypes.CENTER_CROP);
 
+        //OBTAIN DE NAME OF THE USER
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
+
+        final TextView welcome = viewRoot.findViewById(R.id.helloUser);
+
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+
+                if (userProfile != null) {
+                    String fullName = userProfile.name;
+
+                    welcome.setText("Buenos días, " + fullName + "!");
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(HomeFragment.this.getActivity(), "Algo salio mal", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         return viewRoot;

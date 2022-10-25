@@ -60,4 +60,15 @@
         android:id="@+id/sendLogout"/>
 
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu"
+        android:background="@color/custom"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
+
+
 </RelativeLayout>
