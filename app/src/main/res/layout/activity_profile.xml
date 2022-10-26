@@ -9,55 +9,99 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:id="@+id/tittleHome"/>
+        android:layout_marginVertical="10dp"
+        android:text="@string/profile"
+        android:textSize="30sp"
+        android:id="@+id/titleProfile"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Email Adress"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/tittleHome"
-        android:id="@+id/emailAddressTittle"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/emailAddressTittle"
-        android:id="@+id/emailAddress"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Full Name"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/emailAddress"
-        android:id="@+id/nameTittle"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/nameTittle"
-        android:id="@+id/name"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGOUT"
-        android:layout_below="@+id/name"
-        android:textSize="30dp"
-        android:layout_marginTop="70dp"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_my_profile_default"
+        android:layout_below="@+id/titleProfile"
         android:layout_centerInParent="true"
-        android:id="@+id/sendLogout"/>
+        android:id="@+id/profileImage"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="@color/dark"
+        android:text="@string/profileData"
+        app:cornerRadius="8dp"
+        app:strokeColor="@color/light"
+        app:strokeWidth="2dp"
+        android:layout_below="@+id/profileImage"
+        android:id="@+id/btnProfileData"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="@color/dark"
+        android:text="@string/profilePendingConsumes"
+        app:cornerRadius="8dp"
+        app:strokeColor="@color/light"
+        app:strokeWidth="2dp"
+        android:layout_below="@+id/btnProfileData"
+        android:id="@+id/btnProfileConsumePending"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="@color/dark"
+        android:text="@string/profileMyPoints"
+        app:cornerRadius="8dp"
+        app:strokeColor="@color/light"
+        app:strokeWidth="2dp"
+        android:layout_below="@+id/btnProfileConsumePending"
+        android:id="@+id/btnProfileMyPoints"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="@color/dark"
+        android:text="@string/profileSettingsApp"
+        app:cornerRadius="8dp"
+        app:strokeColor="@color/light"
+        app:strokeWidth="2dp"
+        android:layout_below="@+id/btnProfileMyPoints"
+        android:id="@+id/btnProfileSettingApp"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:gravity="center"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="@color/dark"
+        android:text="@string/profileSignOut"
+        app:cornerRadius="8dp"
+        app:strokeColor="@color/light"
+        app:strokeWidth="2dp"
+        android:layout_below="@+id/btnProfileSettingApp"
+        android:id="@+id/btnProfileSignOut"/>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -69,6 +113,9 @@
         android:background="@color/custom"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"/>
+
+
+
 
 
 </RelativeLayout>

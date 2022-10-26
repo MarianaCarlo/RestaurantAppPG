@@ -21,57 +21,22 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private FirebaseUser user;
-    private DatabaseReference reference;
-
-    private String userID;
-
-    private Button buttonLogout;
+    private Button buttonProfileData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        buttonLogout = findViewById(R.id.sendLogout);
+        buttonProfileData = findViewById(R.id.btnProfileData);
 
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
+        buttonProfileData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, ProfileDataActivity.class);
                 startActivity(intent);
             }
         });
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
-
-        final TextView welcome = findViewById(R.id.tittleHome);
-        final TextView emailTextView = findViewById(R.id.emailAddress);
-        final TextView nameTextView = findViewById(R.id.name);
-
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User userProfile = snapshot.getValue(User.class);
-
-                if (userProfile != null) {
-                    String email = userProfile.email;
-                    String fullName = userProfile.name;
-
-                    welcome.setText("Welcome, " + fullName + "!");
-                    emailTextView.setText(email);
-                    nameTextView.setText(fullName);
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ProfileActivity.this, "Something wrong happened", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }
