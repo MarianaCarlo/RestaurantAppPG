@@ -21,12 +21,20 @@
     <string name="historyConsumes">Consumos</string>
     <string name="recommendations">Recomendaciones</string>
 
-    <!--Profile Data Activity-->
+    <!--Profile Activity Buttons-->
     <string name="profileData">Mis Datos</string>
     <string name="profilePendingConsumes">Pagos Pendientes de consumo</string>
     <string name="profileMyPoints">Mis Puntos Acumulados</string>
     <string name="profileSettingsApp">Configuración de la app</string>
     <string name="profileSignOut">Cerrar sesión</string>
+
+    <!--Profile Data -->
+    <string name="profileName">Nombre:</string>
+    <string name="profileEmail">Correo electrónico:</string>
+    <string name="profilePassword">Contraseña:</string>
+    <string name="profileAddress">Dirección:</string>
+    <string name="profilePhone">Celular:</string>
+    <string name="profileBirthdate">Fecha de nacimiento:</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -125,7 +126,19 @@ public class HomeFragment extends Fragment {
                 if (userProfile != null) {
                     String fullName = userProfile.name;
 
-                    welcome.setText("Buenos días, " + fullName + "!");
+                    Calendar calendar = Calendar.getInstance();
+                    int hour24hrs = calendar.get(Calendar.HOUR_OF_DAY);
+                    int minutes = calendar.get(Calendar.MINUTE);
+
+                    if (hour24hrs >= 6 && hour24hrs < 12 ){
+                        welcome.setText("Buenos días, " + fullName + "! Son las " + hour24hrs + ":" + minutes);
+                    } else if (hour24hrs >= 12 && hour24hrs <= 6) {
+                        welcome.setText("Buenas tardes, " + fullName + "! Son las " + hour24hrs + ":" + minutes);
+                    } else {
+                        welcome.setText("Buenas noches, " + fullName + "! Son las " + hour24hrs + ":" + minutes);
+                    }
+
+
 
                 }
             }

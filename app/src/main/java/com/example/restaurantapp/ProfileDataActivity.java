@@ -48,9 +48,8 @@ public class ProfileDataActivity extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextView welcome = findViewById(R.id.tittleHome);
-        final TextView emailTextView = findViewById(R.id.emailAddress);
-        final TextView nameTextView = findViewById(R.id.name);
+        final TextView emailTextView = findViewById(R.id.getEmail);
+        final TextView nameTextView = findViewById(R.id.getName);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -61,7 +60,6 @@ public class ProfileDataActivity extends AppCompatActivity {
                     String email = userProfile.email;
                     String fullName = userProfile.name;
 
-                    welcome.setText("Welcome, " + fullName + "!");
                     emailTextView.setText(email);
                     nameTextView.setText(fullName);
 

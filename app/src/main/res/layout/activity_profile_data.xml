@@ -9,53 +9,128 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="@string/profileData"
         android:textSize="30sp"
-        android:id="@+id/tittleHome"/>
+        android:id="@+id/titleProfile"/>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_my_profile_default"
+        android:layout_below="@+id/titleProfile"
+        android:layout_centerInParent="true"
+        android:id="@+id/profileImage"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Email Adress"
-        android:textSize="20sp"
+        android:textSize="16sp"
+        android:layout_below="@+id/profileImage"
+        android:text="@string/profileName"
         android:textStyle="bold"
-        android:layout_below="@+id/tittleHome"
-        android:id="@+id/emailAddressTittle"/>
+        android:id="@+id/txtName"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="20sp"
-        android:layout_below="@+id/emailAddressTittle"
-        android:id="@+id/emailAddress"/>
-
+        android:layout_marginVertical="10dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/txtName"
+        android:id="@+id/getName"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Full Name"
-        android:textSize="20sp"
+        android:textSize="16sp"
+        android:layout_below="@+id/getName"
+        android:text="@string/profileEmail"
         android:textStyle="bold"
-        android:layout_below="@+id/emailAddress"
-        android:id="@+id/nameTittle"/>
+        android:id="@+id/txtEmail"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:textSize="20sp"
-        android:layout_below="@+id/nameTittle"
-        android:id="@+id/name"/>
+        android:layout_marginVertical="10dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/txtEmail"
+        android:id="@+id/getEmail"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@+id/getEmail"
+        android:text="@string/profilePassword"
+        android:textStyle="bold"
+        android:id="@+id/txtPassword"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/txtPassword"
+        android:id="@+id/getPassword"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@+id/getPassword"
+        android:text="@string/profileAddress"
+        android:textStyle="bold"
+        android:id="@+id/txtAddress"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/txtAddress"
+        android:id="@+id/getAddress"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@+id/getAddress"
+        android:text="@string/profilePhone"
+        android:textStyle="bold"
+        android:id="@+id/txtPhone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/txtPhone"
+        android:id="@+id/getPhone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@+id/getPhone"
+        android:text="@string/profileBirthdate"
+        android:textStyle="bold"
+        android:id="@+id/txtBirthdate"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/txtBirthdate"
+        android:id="@+id/getBirthdate"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGOUT"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/getBirthdate"
         android:textSize="30sp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         android:layout_centerInParent="true"
         android:id="@+id/sendLogout"/>
 
