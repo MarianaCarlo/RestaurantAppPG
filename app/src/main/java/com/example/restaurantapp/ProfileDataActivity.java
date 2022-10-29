@@ -50,6 +50,7 @@ public class ProfileDataActivity extends AppCompatActivity {
 
         final TextView emailTextView = findViewById(R.id.getEmail);
         final TextView nameTextView = findViewById(R.id.getName);
+        final TextView passwordTextView = findViewById(R.id.getPassword);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -59,9 +60,11 @@ public class ProfileDataActivity extends AppCompatActivity {
                 if (userProfile != null) {
                     String email = userProfile.email;
                     String fullName = userProfile.name;
+                    String password = "passwordDefault";
 
                     emailTextView.setText(email);
                     nameTextView.setText(fullName);
+                    passwordTextView.setText(password);
 
                 }
             }

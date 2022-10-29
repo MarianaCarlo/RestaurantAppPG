@@ -22,117 +22,171 @@
         android:layout_centerInParent="true"
         android:id="@+id/profileImage"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/profileImage"
-        android:text="@string/profileName"
-        android:textStyle="bold"
-        android:id="@+id/txtName"/>
+        >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:textSize="16sp"
-        android:layout_below="@+id/txtName"
-        android:id="@+id/getName"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/profileImage"
+            android:paddingBottom="50dp"
+            android:id="@+id/buttonsAll"
+            >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_below="@+id/getName"
-        android:text="@string/profileEmail"
-        android:textStyle="bold"
-        android:id="@+id/txtEmail"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="16sp"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:textSize="16sp"
-        android:layout_below="@+id/txtEmail"
-        android:id="@+id/getEmail"/>
+                android:text="@string/profileName"
+                android:textStyle="bold"
+                android:id="@+id/txtName"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_below="@+id/getEmail"
-        android:text="@string/profilePassword"
-        android:textStyle="bold"
-        android:id="@+id/txtPassword"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:textSize="16sp"
-        android:layout_below="@+id/txtPassword"
-        android:id="@+id/getPassword"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                android:paddingLeft="20dp"
+                android:textSize="16sp"
+                android:background="@drawable/backwithborder"
+                android:layout_below="@+id/txtName"
+                android:id="@+id/getName"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_below="@+id/getPassword"
-        android:text="@string/profileAddress"
-        android:textStyle="bold"
-        android:id="@+id/txtAddress"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/getName"
+                android:text="@string/profileEmail"
+                android:textStyle="bold"
+                android:id="@+id/txtEmail"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:textSize="16sp"
-        android:layout_below="@+id/txtAddress"
-        android:id="@+id/getAddress"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                android:paddingLeft="20dp"
+                android:textSize="16sp"
+                android:background="@drawable/backwithborder"
+                android:layout_below="@+id/txtEmail"
+                android:id="@+id/getEmail"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_below="@+id/getAddress"
-        android:text="@string/profilePhone"
-        android:textStyle="bold"
-        android:id="@+id/txtPhone"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/getEmail"
+                android:text="@string/profilePassword"
+                android:textStyle="bold"
+                android:id="@+id/txtPassword"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:textSize="16sp"
-        android:layout_below="@+id/txtPhone"
-        android:id="@+id/getPhone"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                android:paddingLeft="20dp"
+                android:textSize="16sp"
+                android:inputType="textPassword"
+                android:background="@drawable/backwithborder"
+                android:layout_below="@+id/txtPassword"
+                android:id="@+id/getPassword"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_below="@+id/getPhone"
-        android:text="@string/profileBirthdate"
-        android:textStyle="bold"
-        android:id="@+id/txtBirthdate"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/getPassword"
+                android:text="@string/profileAddress"
+                android:textStyle="bold"
+                android:id="@+id/txtAddress"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:textSize="16sp"
-        android:layout_below="@+id/txtBirthdate"
-        android:id="@+id/getBirthdate"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                android:paddingLeft="20dp"
+                android:textSize="16sp"
+                android:background="@drawable/backwithborder"
+                android:layout_below="@+id/txtAddress"
+                android:id="@+id/getAddress"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LOGOUT"
-        android:layout_below="@+id/getBirthdate"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/sendLogout"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/getAddress"
+                android:text="@string/profilePhone"
+                android:textStyle="bold"
+                android:id="@+id/txtPhone"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                android:paddingLeft="20dp"
+                android:textSize="16sp"
+                android:background="@drawable/backwithborder"
+                android:layout_below="@+id/txtPhone"
+                android:id="@+id/getPhone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/getPhone"
+                android:text="@string/profileBirthdate"
+                android:textStyle="bold"
+                android:id="@+id/txtBirthdate"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                android:paddingLeft="20dp"
+                android:textSize="16sp"
+                android:background="@drawable/backwithborder"
+                android:layout_below="@+id/txtBirthdate"
+                android:id="@+id/getBirthdate"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOGOUT"
+                android:layout_below="@+id/getBirthdate"
+                android:textSize="30sp"
+                android:layout_marginTop="20dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/sendLogout"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -144,5 +198,7 @@
         android:background="@color/custom"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"/>
+
+
 
 </RelativeLayout>
