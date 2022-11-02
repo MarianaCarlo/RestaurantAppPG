@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantApp">
         <activity
+            android:name=".EditProfileDataActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileDataActivity"
             android:exported="false" />
         <activity
