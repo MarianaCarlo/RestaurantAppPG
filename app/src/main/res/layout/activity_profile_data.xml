@@ -51,7 +51,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:textSize="16sp"
-
                 android:text="@string/profileName"
                 android:textStyle="bold"
                 android:id="@+id/txtName"/>
@@ -87,6 +86,7 @@
                 android:layout_marginVertical="10dp"
                 android:paddingVertical="10dp"
                 android:paddingLeft="20dp"
+                android:alpha="0.5"
                 android:textSize="16sp"
                 android:background="@drawable/backwithborder"
                 android:layout_below="@+id/txtEmail"
@@ -109,6 +109,7 @@
                 android:layout_marginVertical="10dp"
                 android:paddingVertical="10dp"
                 android:paddingLeft="20dp"
+                android:alpha="0.5"
                 android:textSize="16sp"
                 android:inputType="textPassword"
                 android:background="@drawable/backwithborder"
@@ -132,6 +133,7 @@
                 android:layout_marginVertical="10dp"
                 android:paddingVertical="10dp"
                 android:paddingLeft="20dp"
+                android:alpha="0.5"
                 android:textSize="16sp"
                 android:background="@drawable/backwithborder"
                 android:layout_below="@+id/txtAddress"
@@ -154,6 +156,7 @@
                 android:layout_marginVertical="10dp"
                 android:paddingVertical="10dp"
                 android:paddingLeft="20dp"
+                android:alpha="0.5"
                 android:textSize="16sp"
                 android:background="@drawable/backwithborder"
                 android:layout_below="@+id/txtPhone"
@@ -177,6 +180,7 @@
                 android:paddingVertical="10dp"
                 android:paddingLeft="20dp"
                 android:textSize="16sp"
+                android:alpha="0.5"
                 android:background="@drawable/backwithborder"
                 android:layout_below="@+id/txtBirthdate"
                 android:id="@+id/getBirthdate"/>

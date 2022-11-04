@@ -1,21 +1,25 @@
 package com.example.restaurantapp.models;
 
+import java.util.Date;
+
 public class User {
 
     public String name;
     public String email;
     public String address = null;
-    public String cellphone = null;
+    public int cellphone = 0;
+    public String birthdate = null;
 
 
     public User() {
     }
 
-    public User(String name, String email, String address, String cellphone) {
+    public User(String name, String email, String address, int cellphone, String birthdate) {
         this.name = name;
         this.email = email;
         this.address = address;
         this.cellphone = cellphone;
+        this.birthdate = birthdate;
     }
 
     public String getName() {
@@ -42,11 +46,19 @@ public class User {
         this.address = address;
     }
 
-    public String getCellphone() {
+    public int getCellphone() {
         return cellphone;
     }
 
-    public void setCellphone(String cellphone) {
+    public void setCellphone(int cellphone) {
         this.cellphone = cellphone;
+    }
+
+    public String getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
     }
 }

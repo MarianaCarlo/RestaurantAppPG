@@ -90,15 +90,15 @@ public class EditProfileDataActivity extends AppCompatActivity {
                     String email = userProfile.email;
                     String fullName = userProfile.name;
                     String password = "passwordDefault";
-                    String address = "casa 123";
-                    String phone = "705096540";
+                    String address = userProfile.address;
+                    int phone = userProfile.cellphone;
                     String birthdate = "20/11/1999";
 
                     editEmail.setText(email);
                     editName.setText(fullName);
                     editPassword.setText(password);
                     editAddress.setText(address);
-                    editPhone.setText(phone);
+                    editPhone.setText(String.valueOf(phone));
                     editBirthdate.setText(birthdate);
 
                 }
@@ -118,7 +118,7 @@ public class EditProfileDataActivity extends AppCompatActivity {
                 String userEmail = editEmail.getText().toString().trim();
                 String userPassword = editPassword.getText().toString().trim();
                 String userAddress = editAddress.getText().toString().trim();
-                String userPhone = editPhone.getText().toString().trim();
+                int userPhone = Integer.parseInt(editPhone.getText().toString().trim());
                 String userBirthdate = editBirthdate.getText().toString().trim();
 
                 Map<String, Object> map = new HashMap<>();
@@ -133,7 +133,7 @@ public class EditProfileDataActivity extends AppCompatActivity {
                         //reference.updateChildren(map);
                         reference.child(userID).updateChildren(map);
                         Toast.makeText(EditProfileDataActivity.this, "User updated", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(EditProfileDataActivity.this, ProfileDataActivity.class);
+                        Intent intent = new Intent(EditProfileDataActivity.this, ProfileActivity.class);
                         startActivity(intent);
                     }
 

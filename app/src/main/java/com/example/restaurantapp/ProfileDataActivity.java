@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Date;
+
 public class ProfileDataActivity extends AppCompatActivity {
 
     private FirebaseUser user;
@@ -54,6 +56,9 @@ public class ProfileDataActivity extends AppCompatActivity {
         final TextView emailTextView = findViewById(R.id.getEmail);
         final TextView nameTextView = findViewById(R.id.getName);
         final TextView passwordTextView = findViewById(R.id.getPassword);
+        final TextView addressTextView = findViewById(R.id.getAddress);
+        final TextView cellphoneTextView = findViewById(R.id.getPhone);
+        final TextView birthdateTextView = findViewById(R.id.getBirthdate);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -64,10 +69,16 @@ public class ProfileDataActivity extends AppCompatActivity {
                     String email = userProfile.email;
                     String fullName = userProfile.name;
                     String password = "passwordDefault";
+                    String address = userProfile.address;
+                    int phone = userProfile.cellphone;
+                    String birthdate = userProfile.birthdate;
 
                     emailTextView.setText(email);
                     nameTextView.setText(fullName);
                     passwordTextView.setText(password);
+                    addressTextView.setText(address);
+                    cellphoneTextView.setText(String.valueOf(phone));
+                    birthdateTextView.setText(birthdate);
 
                 }
             }
