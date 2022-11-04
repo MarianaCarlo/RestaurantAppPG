@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class ProfileDataActivity extends AppCompatActivity {
     private String userID;
 
     private Button buttonLogout;
+    private ImageButton buttonEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class ProfileDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile_data);
 
         buttonLogout = findViewById(R.id.sendLogout);
+        buttonEditProfile = findViewById(R.id.editProfile);
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,5 +78,12 @@ public class ProfileDataActivity extends AppCompatActivity {
             }
         });
 
+        buttonEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileDataActivity.this, EditProfileDataActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

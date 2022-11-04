@@ -22,6 +22,16 @@
         android:layout_centerInParent="true"
         android:id="@+id/profileImage"/>
 
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_edit_profile"
+        android:layout_toRightOf="@+id/profileImage"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_redonded"
+        android:id="@+id/editProfile"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,6 +65,7 @@
                 android:paddingVertical="10dp"
                 android:paddingLeft="20dp"
                 android:textSize="16sp"
+                android:alpha="0.5"
                 android:background="@drawable/backwithborder"
                 android:layout_below="@+id/txtName"
                 android:id="@+id/getName"/>
