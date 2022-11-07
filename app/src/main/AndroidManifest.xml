@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantApp">
         <activity
+            android:name=".SubscriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnnouncementsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FoodActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileDataActivity"
             android:exported="false" />
         <activity

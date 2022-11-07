@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.restaurantapp.fragments.AnnouncementsFragment;
 import com.example.restaurantapp.fragments.FoodFragment;
 import com.example.restaurantapp.fragments.HomeFragment;
@@ -26,15 +29,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 public class HomeActivity extends AppCompatActivity {
 
-    //private var home_fm = HomeFragment();
-
     BottomNavigationView bottomNavigationView;
-    HomeFragment homeFragment = new HomeFragment();
-    SubscriptionFragment subscriptionFragment = new SubscriptionFragment();
-    FoodFragment foodFragment = new FoodFragment();
-    AnnouncementsFragment announcementsFragment = new AnnouncementsFragment();
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+    private Button buttonProfile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,29 +48,89 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
+        bottomNavigationView.setSelectedItemId(R.id.ic_home);
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        buttonProfile = findViewById(R.id.btnProfile);
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.ic_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,homeFragment).commit();
-                        return true;
-                    case R.id.ic_subscription:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,subscriptionFragment).commit();
-                        return true;
-                    case R.id.ic_food:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,foodFragment).commit();
-                        return true;
-                    case R.id.ic_announcement:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,announcementsFragment).commit();
-                        return true;
-                }
-
-                return false;
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
 
+        //SLIDES OF IMAGES
+        ImageSlider imageSlider = findViewById(R.id.sliderImages);
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.burger, null));
+        slideModels.add(new SlideModel(R.drawable.sandwiches, null));
+        slideModels.add(new SlideModel(R.drawable.sushi, null));
+        imageSlider.setImageList(slideModels    , ScaleTypes.CENTER_CROP);
+
+        //OBTAIN DE NAME OF THE USER
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
+
+        final TextView welcome = findViewById(R.id.helloUser);
+
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
+
+                if (userProfile != null) {
+                    String fullName = userProfile.name;
+
+                    Calendar calendar = Calendar.getInstance();
+                    int hour24hrs = calendar.get(Calendar.HOUR_OF_DAY);
+                    //int minutes = calendar.get(Calendar.MINUTE);
+
+                    if (hour24hrs >= 6 && hour24hrs < 12 ){
+                        welcome.setText("Buenos días, " + fullName + "! Tenemos las siguientes recomendaciones para tí: ");
+                    } else if (hour24hrs >= 12 && hour24hrs <= 6) {
+                        welcome.setText("Buenas tardes, " + fullName + "! Tenemos las siguientes recomendaciones para tí: ");
+                    } else {
+                        welcome.setText("Buenas noches, " + fullName + "! Tenemos las siguientes recomendaciones para tí: ");
+                    }
+
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(HomeActivity.this, "Algo salio mal", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.ic_home:
+                        return true;
+
+                    case R.id.ic_subscription:
+                        startActivity(new Intent(getApplicationContext(), SubscriptionActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.ic_food:
+                        startActivity(new Intent(getApplicationContext(), FoodActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.ic_announcement:
+                        startActivity(new Intent(getApplicationContext(), AnnouncementsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 }
