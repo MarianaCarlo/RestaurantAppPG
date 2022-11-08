@@ -1,34 +1,27 @@
 package com.example.restaurantapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ImageView;
 
-import com.example.restaurantapp.fragments.AnnouncementsFragment;
-import com.example.restaurantapp.fragments.FoodFragment;
-import com.example.restaurantapp.fragments.HomeFragment;
-import com.example.restaurantapp.fragments.SubscriptionFragment;
-import com.example.restaurantapp.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 
 public class ProfileActivity extends AppCompatActivity {
 
     private Button buttonProfileData;
+    private Button buttonProfileConsumePending;
+    private Button buttonProfileMyPoints;
+    private Button buttonProfileSettingApp;
+    private Button buttonProfileSignOut;
 
     BottomNavigationView bottomNavigationView;
 
@@ -36,11 +29,13 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         buttonProfileData = findViewById(R.id.btnProfileData);
-
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,ProfileActivity.class).commit();
+        buttonProfileConsumePending = findViewById(R.id.btnProfileConsumePending);
+        buttonProfileMyPoints = findViewById(R.id.btnProfileMyPoints);
+        buttonProfileSettingApp = findViewById(R.id.btnProfileSettingApp);
+        buttonProfileSignOut = findViewById(R.id.btnProfileSignOut);
 
 
         buttonProfileData.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +46,34 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        buttonProfileSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageView image = new ImageView(ProfileActivity.this);
+                image.setImageResource(R.drawable.ic_crying_emoji);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProfileActivity.this);
+                builder.setMessage("¿Estas seguro que deseas salir?");
+                builder.setTitle("¡ALERTA!");
+                builder.setCancelable(false);
+                builder.setPositiveButton("SI", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+                    startActivity(intent);
+                });
+
+                builder.setNegativeButton("NO", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    dialog.cancel();
+                });
+
+                builder.setView(image);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+            }
+        });
+
+
+        //********************************   MENU   **************************
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

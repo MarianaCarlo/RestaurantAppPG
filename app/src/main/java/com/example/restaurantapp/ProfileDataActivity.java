@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.restaurantapp.models.User;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,8 +28,8 @@ public class ProfileDataActivity extends AppCompatActivity {
 
     private FirebaseUser user;
     private DatabaseReference reference;
-
     private String userID;
+    BottomNavigationView bottomNavigationView;
 
     private Button buttonLogout;
     private ImageButton buttonEditProfile;
@@ -36,6 +38,7 @@ public class ProfileDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_data);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         buttonLogout = findViewById(R.id.sendLogout);
         buttonEditProfile = findViewById(R.id.editProfile);
@@ -96,5 +99,35 @@ public class ProfileDataActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //********************************   MENU   **************************
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.ic_home:
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.ic_subscription:
+                        startActivity(new Intent(getApplicationContext(), SubscriptionActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.ic_food:
+                        startActivity(new Intent(getApplicationContext(), FoodActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.ic_announcement:
+                        startActivity(new Intent(getApplicationContext(), AnnouncementsActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
     }
 }

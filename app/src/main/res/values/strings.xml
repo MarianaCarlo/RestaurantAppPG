@@ -1,15 +1,18 @@
 <resources>
     <string name="app_name">RestaurantApp</string>
 
+    <!--Main Activity-->
     <string name="welcomeMessage">Bienvenido a la aplicación de restaurantes</string>
     <string name="login">Ingresar</string>
     <string name="register">Registrarse</string>
 
+    <!--Register Activity-->
     <string name="registerTitle">Registre sus datos</string>
     <string name="emailUser">Email</string>
     <string name="nameUser">Nombre</string>
     <string name="passwordUser">Contraseña</string>
 
+    <!--Login Activity-->
     <string name="loginTitle">Inicio de sesión</string>
     <string name="mailTitleLogin">Correo electrónico</string>
 
@@ -17,6 +20,13 @@
     <string name="forgotPasswordText">Introduce tu correo:</string>
     <string name="resetPassword">Resetear Contraseña</string>
 
+    <!--Menu-->
+    <string name="homeMenu">Inicio</string>
+    <string name="subscriptionMenu">Suscripción</string>
+    <string name="foodMenu">Comida</string>
+    <string name="announcementMenu">Anuncios</string>
+
+    <!--Profile Activity-->
     <string name="profile">Mi perfil</string>
     <string name="historyConsumes">Consumos</string>
     <string name="recommendations">Recomendaciones</string>

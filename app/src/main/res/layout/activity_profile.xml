@@ -29,7 +29,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="10dp"
         android:gravity="center"
-        android:backgroundTint="@android:color/transparent"
+        android:textAllCaps="false"
         android:textColor="@color/dark"
         android:text="@string/profileData"
         app:cornerRadius="8dp"
@@ -46,7 +46,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="10dp"
         android:gravity="center"
-        android:backgroundTint="@android:color/transparent"
+        android:textAllCaps="false"
         android:textColor="@color/dark"
         android:text="@string/profilePendingConsumes"
         app:cornerRadius="8dp"
@@ -62,7 +62,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="10dp"
         android:gravity="center"
-        android:backgroundTint="@android:color/transparent"
+        android:textAllCaps="false"
         android:textColor="@color/dark"
         android:text="@string/profileMyPoints"
         app:cornerRadius="8dp"
@@ -78,7 +78,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="10dp"
         android:gravity="center"
-        android:backgroundTint="@android:color/transparent"
+        android:textAllCaps="false"
         android:textColor="@color/dark"
         android:text="@string/profileSettingsApp"
         app:cornerRadius="8dp"
@@ -94,7 +94,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginVertical="10dp"
         android:gravity="center"
-        android:backgroundTint="@android:color/transparent"
+        android:textAllCaps="false"
         android:textColor="@color/dark"
         android:text="@string/profileSignOut"
         app:cornerRadius="8dp"
@@ -103,11 +103,6 @@
         android:layout_below="@+id/btnProfileSettingApp"
         android:id="@+id/btnProfileSignOut"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment_container"
-        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

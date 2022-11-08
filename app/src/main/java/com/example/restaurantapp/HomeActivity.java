@@ -14,10 +14,6 @@ import android.widget.Toast;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.example.restaurantapp.fragments.AnnouncementsFragment;
-import com.example.restaurantapp.fragments.FoodFragment;
-import com.example.restaurantapp.fragments.HomeFragment;
-import com.example.restaurantapp.fragments.SubscriptionFragment;
 import com.example.restaurantapp.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -85,13 +81,14 @@ public class HomeActivity extends AppCompatActivity {
                     Calendar calendar = Calendar.getInstance();
                     int hour24hrs = calendar.get(Calendar.HOUR_OF_DAY);
                     //int minutes = calendar.get(Calendar.MINUTE);
+                    String welcomeRcm = "! Tenemos las siguientes recomendaciones para tí: ";
 
                     if (hour24hrs >= 6 && hour24hrs < 12 ){
-                        welcome.setText("Buenos días, " + fullName + "! Tenemos las siguientes recomendaciones para tí: ");
+                        welcome.setText("Buenos días, " + fullName + welcomeRcm);
                     } else if (hour24hrs >= 12 && hour24hrs <= 6) {
-                        welcome.setText("Buenas tardes, " + fullName + "! Tenemos las siguientes recomendaciones para tí: ");
+                        welcome.setText("Buenas tardes, " + fullName + welcomeRcm);
                     } else {
-                        welcome.setText("Buenas noches, " + fullName + "! Tenemos las siguientes recomendaciones para tí: ");
+                        welcome.setText("Buenas noches, " + fullName + welcomeRcm);
                     }
 
 
