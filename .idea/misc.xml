@@ -6,7 +6,10 @@
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/drawable-v24/backwithborder.xml" value="0.2203125" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/drawable-v24/button_border.xml" value="0.1" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/drawable-v24/button_redonded.xml" value="0.1" />
+        <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/drawable/backwithborderText.xml" value="0.1" />
+        <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/drawable/backwithborder_text.xml" value="0.1" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/drawable/button_border.xml" value="0.1" />
+        <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/drawable/ic_certificate.xml" value="0.1" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/drawable/ic_edit_profile.xml" value="0.1" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/activity_announcements.xml" value="0.1" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/activity_edit_profile_data.xml" value="0.18" />
@@ -19,7 +22,7 @@
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/activity_profile_data.xml" value="0.14" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/activity_register.xml" value="0.12" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/activity_sign_in.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/activity_subscription.xml" value="0.1" />
+        <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/activity_subscription.xml" value="0.18" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/backwithborder.xml" value="0.18981481481481483" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/fragment_announcements.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/mari-/Desktop/foodAppAndroid/RestaurantApp/app/src/main/res/layout/fragment_food.xml" value="0.20416666666666666" />

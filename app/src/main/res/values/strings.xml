@@ -50,6 +50,16 @@
     <string name="editProfileData">Editar mis datos</string>
     <string name="btnUpdateProfileData">Actualizar datos</string>
 
+    <!--Subscription Activity-->
+    <string name="subscriptionTitle">Mi suscripción</string>
+    <string name="subscriptionMessage">Aùn no cuentas con una membresía en la aplicación mòvil</string>
+    <string name="subscriptionPoint1">Acceso a ganar puntos</string>
+    <string name="subscriptionPoint2">Descuentos y promociones en negocios de comida</string>
+    <string name="subscriptionPoint3">Historial de consumos</string>
+    <string name="subscriptionPoint4">Pagos a través de la app</string>
+    <string name="subscriptionPoint5">Recomendaciones según consumos anteriores</string>
+    <string name="subscriptionObtain">Obtener</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
