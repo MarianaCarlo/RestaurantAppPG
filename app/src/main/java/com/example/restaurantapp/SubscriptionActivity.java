@@ -6,12 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SubscriptionActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
+    Button buttonObtainNew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,18 @@ public class SubscriptionActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.ic_subscription);
+
+        buttonObtainNew = findViewById(R.id.btnSendObtain);
+
+        buttonObtainNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(SubscriptionActivity.this, "steps", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SubscriptionActivity.this, NewSubscriptionActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

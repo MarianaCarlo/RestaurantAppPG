@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewSubscriptionActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newSubscriptionTitle"
+        android:textSize="20sp"
+        android:paddingVertical="20dp"
+        android:id="@+id/newSubscriptionTitle"/>
+
+    <com.kofigyan.stateprogressbar.StateProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newSubscriptionTitle"
+        android:id="@+id/progressBarNewSuscription"
+        app:spb_currentStateNumber="one"
+        app:spb_maxStateNumber="four"
+        app:spb_stateSize="50dp"
+        app:spb_stateBackgroundColor="@color/dark"
+        app:spb_stateForegroundColor="@color/custom"
+        app:spb_stateNumberBackgroundColor="@color/white"
+        app:spb_stateNumberForegroundColor="@color/white"
+        app:spb_currentStateDescriptionColor="#E91E63"
+        app:spb_stateDescriptionColor="#610FE6"
+        app:spb_animateToCurrentProgressState="true"
+        app:spb_checkStateCompleted="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subscriptionMessage"
+        android:layout_below="@+id/progressBarNewSuscription"
+        android:id="@+id/messageSuscription"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/messageSuscription"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imagesVisaMastercard"
+        android:src="@drawable/visa_mastercard"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:paddingHorizontal="50dp"
+        android:layout_below="@+id/imagesVisaMastercard"
+        android:backgroundTint="@color/custom"
+        android:text="siguiente"
+        android:textColor="@color/dark"
+        app:cornerRadius="23dp"
+        android:id="@+id/btnNextStep"/>
+
+
+</RelativeLayout>

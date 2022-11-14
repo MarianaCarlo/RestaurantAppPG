@@ -67,6 +67,7 @@
                     <ImageView
                         android:layout_width="28dp"
                         android:layout_height="28dp"
+                        android:layout_marginRight="12dp"
                         android:src="@drawable/ic_check"/>
 
                     <TextView
@@ -86,6 +87,7 @@
                     <ImageView
                         android:layout_width="28dp"
                         android:layout_height="28dp"
+                        android:layout_marginRight="12dp"
                         android:src="@drawable/ic_check"/>
 
                     <TextView
@@ -104,6 +106,7 @@
                     <ImageView
                         android:layout_width="28dp"
                         android:layout_height="28dp"
+                        android:layout_marginRight="12dp"
                         android:src="@drawable/ic_check"/>
 
                     <TextView
@@ -122,6 +125,7 @@
                     <ImageView
                         android:layout_width="28dp"
                         android:layout_height="28dp"
+                        android:layout_marginRight="12dp"
                         android:src="@drawable/ic_check"/>
 
                     <TextView
@@ -140,6 +144,7 @@
                     <ImageView
                         android:layout_width="28dp"
                         android:layout_height="28dp"
+                        android:layout_marginRight="12dp"
                         android:src="@drawable/ic_check"/>
 
                     <TextView

@@ -11,4 +11,8 @@
     <color name="custom">#58B55B</color>
     <color name="dark">#4E4949</color>
     <color name="light">#FF9900</color>
+
+    <color name="demo">#855BD1</color>
+    <color name="description_foreground">#0DE416</color>
+    <color name="description_background">#F44336</color>
 </resources>
