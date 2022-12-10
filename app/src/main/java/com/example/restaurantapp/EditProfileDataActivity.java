@@ -38,7 +38,8 @@ public class EditProfileDataActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private String userID;
 
-    private EditText editName, editPassword, editAddress, editPhone, editBirthdate;
+    private EditText editName, editAddress, editPhone, editBirthdate;
+    private TextView editPassword;
     DatePickerDialog datePickerDialog;
     private TextView editEmail;
     private Button buttonUpdate;
@@ -94,14 +95,16 @@ public class EditProfileDataActivity extends AppCompatActivity {
                     String password = "passwordDefault";
                     String address = userProfile.address;
                     int phone = userProfile.cellphone;
-                    String birthdate = "20/11/1999";
+                    String birhdate = userProfile.birthdate;
+                    //String birthdate = "20/11/1999";
 
                     editEmail.setText(email);
                     editName.setText(fullName);
                     editPassword.setText(password);
                     editAddress.setText(address);
                     editPhone.setText(String.valueOf(phone));
-                    editBirthdate.setText(birthdate);
+                    //editBirthdate.setText(editBirthdate.getText().toString().trim());
+                    editBirthdate.setText(birhdate);
 
                 }
             }
@@ -112,6 +115,14 @@ public class EditProfileDataActivity extends AppCompatActivity {
             }
         });
 
+        editPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(EditProfileDataActivity.this, "Change passoword", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(EditProfileDataActivity.this, ChangePasswordProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,13 +139,14 @@ public class EditProfileDataActivity extends AppCompatActivity {
                 map.put("email", userEmail);
                 map.put("address", userAddress);
                 map.put("cellphone", userPhone);
+                map.put("birthdate", userBirthdate);
 
                 reference.child(userID).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         //reference.updateChildren(map);
                         reference.child(userID).updateChildren(map);
-                        Toast.makeText(EditProfileDataActivity.this, "User updated", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditProfileDataActivity.this, "Usuario Actualizado con éxito", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(EditProfileDataActivity.this, ProfileActivity.class);
                         startActivity(intent);
                     }

@@ -90,13 +90,14 @@
                 android:textStyle="bold"
                 android:id="@+id/txtPassword"/>
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="10dp"
                 android:paddingVertical="10dp"
                 android:paddingLeft="20dp"
+                android:alpha="0.5"
                 android:textSize="16sp"
                 android:inputType="textPassword"
                 android:background="@drawable/backwithborder"
@@ -175,8 +176,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btnUpdateProfileData"
                 android:layout_below="@+id/getBirthdate"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
                 android:layout_centerInParent="true"
                 android:id="@+id/btnUpdateProfileData"/>
 

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantApp">
         <activity
+            android:name=".ChangePasswordProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".NewSubscriptionActivity"
             android:exported="false" />
         <activity

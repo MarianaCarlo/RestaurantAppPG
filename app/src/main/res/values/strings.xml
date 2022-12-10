@@ -50,6 +50,13 @@
     <string name="editProfileData">Editar mis datos</string>
     <string name="btnUpdateProfileData">Actualizar datos</string>
 
+    <!--Edit Profile Data Change Password-->
+    <string name="editPasswordProfile">Editar mi contraseña</string>
+    <string name="editOldPassword">Contraseña anterior:</string>
+    <string name="editNewPassword">Nueva contraseña:</string>
+    <string name="editNewPasswordConfirm">Confirmar contraseña:</string>
+    <string name="buttonNewPassword">Actualizar contraseña</string>
+
     <!--Subscription Activity-->
     <string name="subscriptionTitle">Mi suscripción</string>
     <string name="subscriptionMessage">Aùn no cuentas con una membresía en la aplicación mòvil</string>
@@ -63,6 +70,8 @@
     <!--New Subscription Activity-->
     <string name="newSubscriptionTitle">Nueva Suscripción</string>
     <string name="newSubscriptionMessage">Vamos a iniciar el registro de tu suscripción</string>
+
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
