@@ -57,13 +57,13 @@
 
 
     <ImageView
+        android:id="@+id/fingerprint"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@+id/buttonsMain"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:src="@drawable/ic_baseline_fingerprint_24"
-        android:id="@+id/fingerprint"/>
+        android:src="@drawable/ic_baseline_fingerprint_24" />
 
 
 </RelativeLayout>

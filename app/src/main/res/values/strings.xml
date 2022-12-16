@@ -19,6 +19,7 @@
     <string name="forgotPassword">¿Olvidaste tu constraseña?</string>
     <string name="forgotPasswordText">Introduce tu correo:</string>
     <string name="resetPassword">Resetear Contraseña</string>
+    <string name="rememberMe">Recuerdame</string>
 
     <!--Menu-->
     <string name="homeMenu">Inicio</string>
@@ -67,10 +68,11 @@
     <string name="subscriptionPoint5">Recomendaciones según consumos anteriores</string>
     <string name="subscriptionObtain">Obtener</string>
 
+
+
     <!--New Subscription Activity-->
     <string name="newSubscriptionTitle">Nueva Suscripción</string>
     <string name="newSubscriptionMessage">Vamos a iniciar el registro de tu suscripción</string>
-
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

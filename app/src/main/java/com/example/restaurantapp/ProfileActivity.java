@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +23,8 @@ public class ProfileActivity extends AppCompatActivity {
     private Button buttonProfileMyPoints;
     private Button buttonProfileSettingApp;
     private Button buttonProfileSignOut;
+
+    public static final String SHARED_PREFS = "sharedPrefs";
 
     BottomNavigationView bottomNavigationView;
 
@@ -57,7 +60,13 @@ public class ProfileActivity extends AppCompatActivity {
                 builder.setTitle("¡ALERTA!");
                 builder.setCancelable(false);
                 builder.setPositiveButton("SI", (DialogInterface.OnClickListener) (dialog, which) -> {
-                    Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+                    SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    editor.putString("name", "");
+                    editor.apply();
+
+                    Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
                     startActivity(intent);
                 });
 
