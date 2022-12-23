@@ -69,11 +69,12 @@
     <string name="subscriptionObtain">Obtener</string>
 
 
-
     <!--New Subscription Activity-->
     <string name="newSubscriptionTitle">Nueva Suscripción</string>
     <string name="newSubscriptionMessage">Vamos a iniciar el registro de tu suscripción</string>
 
+    <!--New Subscription Activity Step 2-->
+    <string name="newSubscriptionMessageStepTwo">Revisa los datos de tu tarjeta antes de realizar el cobro correspondiente.</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

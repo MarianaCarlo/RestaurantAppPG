@@ -52,4 +52,7 @@ dependencies {
     implementation "androidx.biometric:biometric:1.0.1"
     implementation "io.paperdb:paperdb:2.6"
 
+    implementation "com.github.fevziomurtekin:PayView:1.0.3"
+    implementation 'com.braintreepayments:card-form:5.4.0'
+
 }

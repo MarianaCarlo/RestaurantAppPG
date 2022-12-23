@@ -48,6 +48,14 @@
         android:id="@+id/imagesVisaMastercard"
         android:src="@drawable/visa_mastercard"/>
 
+    <com.braintreepayments.cardform.view.CardForm
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagesVisaMastercard"
+        android:paddingHorizontal="20dp"
+        android:id="@+id/cardForm"/>
+
+
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
@@ -55,12 +63,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:paddingHorizontal="50dp"
-        android:layout_below="@+id/imagesVisaMastercard"
+        android:layout_below="@+id/cardForm"
         android:backgroundTint="@color/custom"
         android:text="siguiente"
         android:textColor="@color/dark"
         app:cornerRadius="23dp"
         android:id="@+id/btnNextStep"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu"
+        android:background="@color/custom"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
 
 
 </RelativeLayout>

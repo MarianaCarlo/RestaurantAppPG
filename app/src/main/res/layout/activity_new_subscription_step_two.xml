@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewSubscriptionStepTwoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newSubscriptionTitle"
+        android:textSize="20sp"
+        android:paddingVertical="20dp"
+        android:id="@+id/newSubscriptionTitle"/>
+
+    <com.kofigyan.stateprogressbar.StateProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newSubscriptionTitle"
+        android:id="@+id/progressBarStepTwo"
+        app:spb_currentStateNumber="two"
+        app:spb_maxStateNumber="four"
+        app:spb_stateSize="50dp"
+        app:spb_stateBackgroundColor="@color/dark"
+        app:spb_stateForegroundColor="@color/custom"
+        app:spb_stateNumberBackgroundColor="@color/white"
+        app:spb_stateNumberForegroundColor="@color/white"
+        app:spb_currentStateDescriptionColor="#E91E63"
+        app:spb_stateDescriptionColor="#610FE6"
+        app:spb_animateToCurrentProgressState="true"
+        app:spb_checkStateCompleted="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newSubscriptionMessageStepTwo"
+        android:layout_below="@+id/progressBarStepTwo"
+        android:layout_centerInParent="true"
+        android:paddingHorizontal="20dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/messageSuscriptionStepTwo"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/messageSuscriptionStepTwo"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imagesVisaMastercard"
+        android:src="@drawable/visa_mastercard"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/imagesVisaMastercard"
+        android:id="@+id/getName">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:layout_marginTop="7dp"
+            android:paddingLeft="10dp"
+            android:src="@drawable/ic_card_names"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="10dp"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:alpha="0.5"
+            android:background="@drawable/backwithborder"
+            android:id="@+id/getNameCard"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getName"
+        android:orientation="horizontal"
+        android:id="@+id/getNumber">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_card_number"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="10dp"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:alpha="0.5"
+            android:background="@drawable/backwithborder"
+            android:id="@+id/getNumberCard"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/getNumber"
+        android:id="@+id/getCardMonthYear">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_card_month"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="10dp"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:alpha="0.5"
+            android:background="@drawable/backwithborder"
+            android:id="@+id/getMonthCard"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="10dp"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:alpha="0.5"
+            android:background="@drawable/backwithborder"
+            android:id="@+id/getYearCard"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getCardMonthYear"
+        android:orientation="horizontal"
+        android:id="@+id/getCVV">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_card_cvv"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="10dp"
+            android:paddingLeft="20dp"
+            android:textSize="16sp"
+            android:alpha="0.5"
+            android:background="@drawable/backwithborder"
+            android:id="@+id/getCVVCard"/>
+
+    </LinearLayout>
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu"
+        android:background="@color/custom"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
+
+</RelativeLayout>

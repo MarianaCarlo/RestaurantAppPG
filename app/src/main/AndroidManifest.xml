@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantApp">
         <activity
+            android:name=".NewSubscriptionStepTwoActivity"
+            android:exported="false" />
+        <activity
             android:name=".FingerPrintActivity"
             android:exported="false" />
         <activity
