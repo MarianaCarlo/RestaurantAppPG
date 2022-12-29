@@ -76,6 +76,21 @@
     <!--New Subscription Activity Step 2-->
     <string name="newSubscriptionMessageStepTwo">Revisa los datos de tu tarjeta antes de realizar el cobro correspondiente.</string>
 
+    <!--New Subscription Activity Step 3-->
+    <string name="subsStep3Message1">El monto de cada mes que se debitará de tu tarjeta registrada es de $sus 2.79</string>
+    <string name="subsStep3MessagePrice">$sus 2.79</string>
+    <string name="subsStep3Message2">Puedes cancelar tu membresía cuando lo desees.</string>
+    <string name="subsStep3Message3">Tendrás acceso a tu suscripción hasta la fecha final de la vigencia.</string>
+    <string name="subsCancel">Cancelar</string>
+    <string name="subsConfirm">Confirmar</string>
+
+
+    <!--New Subscription Activity Step 4-->
+    <string name="subsStep4Complete">¡Suscripción completada!</string>
+    <string name="subsStep4Message">¡Felicidades! El cobro realizado $sus 2.79 de la tarjeta 4579 ****fue exitoso, disfruta de tu membresía.</string>
+    <string name="subsStep4Start">Comenzar</string>
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

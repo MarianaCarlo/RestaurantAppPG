@@ -4,60 +4,29 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class NewSubscriptionStepTwoActivity extends AppCompatActivity {
+public class NewSubscriptionStepFourActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    public TextView getCardName, getCardNumber, getCardMonth, getCardYear, getCardCVV;
-    private Button btnNextStepTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_new_subscription_step_four);
         this.overridePendingTransition(R.anim.righttoleft, R.anim.lefttoright);
-        setContentView(R.layout.activity_new_subscription_step_two);
-
-        btnNextStepTwo = findViewById(R.id.btnNextStepTwo);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.ic_subscription);
 
-        getCardName = findViewById(R.id.getNameCard);
-        getCardNumber = findViewById(R.id.getNumberCard);
-        getCardMonth = findViewById(R.id.getMonthCard);
-        getCardYear = findViewById(R.id.getYearCard);
-        getCardCVV = findViewById(R.id.getCVVCard);
 
-        Intent intent = getIntent();
-        String strNameCard = intent.getStringExtra("message_name");
-        String strNumberCard = intent.getStringExtra("message_number");
-        String strMonthCard = intent.getStringExtra("message_month");
-        String strYearCard = intent.getStringExtra("message_year");
-        String strCVVCard = intent.getStringExtra("message_cvv");
-
-        getCardName.setText(strNameCard);
-        getCardNumber.setText(strNumberCard);
-        getCardMonth.setText(strMonthCard);
-        getCardYear.setText(strYearCard);
-        getCardCVV.setText(strCVVCard);
-
-
-        btnNextStepTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(NewSubscriptionStepTwoActivity.this, NewSubscriptionStepThreeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        /*-------------------------------MENU NAVBAR----------------------*/
+        /*---------------------------------------MENU NAVBAR--------------------------------------*/
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -83,5 +52,6 @@ public class NewSubscriptionStepTwoActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 }

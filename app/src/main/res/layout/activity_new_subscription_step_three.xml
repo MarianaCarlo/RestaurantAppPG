@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewSubscriptionStepThreeActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/newSubscriptionTitle"
+        android:textSize="20sp"
+        android:paddingVertical="20dp"
+        android:id="@+id/newSubscriptionTitle"/>
+
+    <com.kofigyan.stateprogressbar.StateProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/newSubscriptionTitle"
+        android:id="@+id/progressBarStepThree"
+        app:spb_currentStateNumber="three"
+        app:spb_maxStateNumber="four"
+        app:spb_stateSize="50dp"
+        app:spb_stateBackgroundColor="@color/dark"
+        app:spb_stateForegroundColor="@color/custom"
+        app:spb_stateNumberBackgroundColor="@color/white"
+        app:spb_stateNumberForegroundColor="@color/white"
+        app:spb_currentStateDescriptionColor="#E91E63"
+        app:spb_stateDescriptionColor="#610FE6"
+        app:spb_animateToCurrentProgressState="true"
+        app:spb_checkStateCompleted="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backwithborder_text"
+        android:layout_below="@+id/progressBarStepThree"
+        android:layout_marginHorizontal="30dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="50dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:id="@+id/confimrMessage"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/ic_check"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subsStep3Message1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/ic_check"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subsStep3Message2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/ic_check"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subsStep3Message3"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:paddingHorizontal="20dp"
+                android:layout_below="@+id/getCVV"
+                android:backgroundTint="#D6DCD6"
+                android:text="@string/subsCancel"
+                android:textColor="@color/dark"
+                app:cornerRadius="10dp"
+                android:textAllCaps="false"
+                android:id="@+id/cancelSubscription"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:paddingHorizontal="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/getCVV"
+                android:backgroundTint="@color/custom"
+                android:text="@string/subsConfirm"
+                android:textColor="@color/dark"
+                app:cornerRadius="10dp"
+                android:textAllCaps="false"
+                android:id="@+id/confirmSubscription"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu"
+        android:background="@color/custom"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"/>
+
+
+
+</RelativeLayout>

@@ -21,11 +21,7 @@ import com.kofigyan.stateprogressbar.listeners.OnStateItemClickListener;
 public class NewSubscriptionActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    String[] descriptionData = {"RegisterPayment", "ConfirmPayment", "ConfirmSubscription", "SaveSubscription"};
     Button buttonNextStep;
-
-    //LayoutInflater inflater = getLayoutInflater();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +29,7 @@ public class NewSubscriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_subscription);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.ic_subscription);
 
         CardForm cardForm = findViewById(R.id.cardForm);
         cardForm.cardRequired(true)

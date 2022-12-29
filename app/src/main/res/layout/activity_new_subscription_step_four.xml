@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewSubscriptionActivity">
+    tools:context=".NewSubscriptionStepFourActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,8 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/newSubscriptionTitle"
-        android:id="@+id/progressBarNewSuscription"
-        app:spb_currentStateNumber="one"
+        android:id="@+id/progressBarStepFour"
+        app:spb_currentStateNumber="four"
         app:spb_maxStateNumber="four"
         app:spb_stateSize="50dp"
         app:spb_stateBackgroundColor="@color/dark"
@@ -31,60 +31,54 @@
         app:spb_animateToCurrentProgressState="true"
         app:spb_checkStateCompleted="true"/>
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/progressBarStepFour"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_check_circle_subscription"
+        android:id="@+id/checkSubs"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/subscriptionMessage"
-        android:layout_below="@+id/progressBarNewSuscription"
-        android:id="@+id/messageSuscription"
+        android:text="@string/subsStep4Complete"
+        android:layout_marginVertical="15dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/checkSubs"
         android:layout_centerHorizontal="true"
-        />
+        android:id="@+id/congrats"/>
 
-    <LinearLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/messageSuscription"
-        android:id="@+id/imagesCards"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/imageVisa"
-            android:src="@drawable/card_visa"/>
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/imageMastercard"
-            android:src="@drawable/card_mastercard"/>
-
-    </LinearLayout>
-
-    <com.braintreepayments.cardform.view.CardForm
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imagesCards"
-        android:paddingHorizontal="20dp"
-        android:id="@+id/cardForm"/>
-
-
+        android:background="@drawable/backwithborder_text"
+        android:layout_below="@+id/congrats"
+        android:layout_centerHorizontal="true"
+        android:text="@string/subsStep4Message"
+        android:layout_marginHorizontal="40dp"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="17dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/subsMessage"/>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:paddingHorizontal="50dp"
-        android:layout_below="@+id/cardForm"
+        android:paddingHorizontal="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/subsMessage"
         android:backgroundTint="@color/custom"
-        android:text="siguiente"
+        android:text="@string/subsStep4Start"
         android:textColor="@color/dark"
-        app:cornerRadius="23dp"
-        android:id="@+id/btnNextStep"/>
+        app:cornerRadius="10dp"
+        android:textAllCaps="false"
+        android:id="@+id/confirmSubscription"/>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -95,6 +89,5 @@
         android:background="@color/custom"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"/>
-
 
 </RelativeLayout>

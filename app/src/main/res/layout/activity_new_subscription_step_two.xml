@@ -42,19 +42,35 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/messageSuscriptionStepTwo"/>
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="80dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/messageSuscriptionStepTwo"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/imagesVisaMastercard"
-        android:src="@drawable/visa_mastercard"/>
+        android:id="@+id/imagesCards"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imageVisa"
+            android:src="@drawable/card_visa"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imageMastercard"
+            android:src="@drawable/card_mastercard"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/imagesVisaMastercard"
+        android:layout_below="@+id/imagesCards"
         android:id="@+id/getName">
 
         <ImageView
@@ -184,6 +200,18 @@
 
 
 
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:paddingHorizontal="50dp"
+        android:layout_below="@+id/getCVV"
+        android:backgroundTint="@color/custom"
+        android:text="siguiente"
+        android:textColor="@color/dark"
+        app:cornerRadius="23dp"
+        android:id="@+id/btnNextStepTwo"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
