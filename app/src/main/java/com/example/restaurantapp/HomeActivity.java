@@ -36,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private String userID;
     private Button buttonProfile;
-
+    private int uStatusSubs = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +76,8 @@ public class HomeActivity extends AppCompatActivity {
                 User userProfile = snapshot.getValue(User.class);
 
                 if (userProfile != null) {
+                    //Toast.makeText(HomeActivity.this, "estado: " + userProfile.statusSubs, Toast.LENGTH_SHORT).show();
+                    uStatusSubs = userProfile.statusSubs;
                     String fullName = userProfile.name;
 
                     Calendar calendar = Calendar.getInstance();
@@ -112,8 +114,17 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.ic_subscription:
-                        startActivity(new Intent(getApplicationContext(), SubscriptionActivity.class));
-                        overridePendingTransition(0,0);
+                        if (uStatusSubs == 1){
+                            //startActivity(new Intent(getApplicationContext(), SubscriptionActivity.class));
+                            startActivity(new Intent(getApplicationContext(), ActualSubscriptionActivity.class));
+                            overridePendingTransition(0,0);
+                        } else if (uStatusSubs == 2) {
+                            startActivity(new Intent(getApplicationContext(), SubscriptionActivity.class));
+                            overridePendingTransition(0,0);
+                        } else {
+                            Toast.makeText(HomeActivity.this, "mal estado", Toast.LENGTH_SHORT).show();
+                        }
+
                         return true;
 
                     case R.id.ic_food:

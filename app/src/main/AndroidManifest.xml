@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantApp">
         <activity
+            android:name=".ActualSSubscriptionCancelSubsConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActualSubscriptionCancelSubsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActualSubscriptionActivity"
+            android:exported="false" />
+        <activity
             android:name=".NewSubscriptionStepFourActivity"
             android:exported="false" />
         <activity

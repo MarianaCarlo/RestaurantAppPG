@@ -9,17 +9,19 @@ public class User {
     public String address = null;
     public int cellphone = 0;
     public String birthdate = null;
+    public int statusSubs;
 
 
     public User() {
     }
 
-    public User(String name, String email, String address, int cellphone, String birthdate) {
+    public User(String name, String email, String address, int cellphone, String birthdate, int statusSubs) {
         this.name = name;
         this.email = email;
         this.address = address;
         this.cellphone = cellphone;
         this.birthdate = birthdate;
+        this.statusSubs = statusSubs;
     }
 
     public String getName() {
@@ -60,5 +62,13 @@ public class User {
 
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
+    }
+
+    public int getStatusSubs() {
+        return statusSubs;
+    }
+
+    public void setStatusSubs(int statusSubs) {
+        this.statusSubs = statusSubs;
     }
 }

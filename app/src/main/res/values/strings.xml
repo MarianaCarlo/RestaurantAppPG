@@ -90,6 +90,21 @@
     <string name="subsStep4Message">¡Felicidades! El cobro realizado $sus 2.79 de la tarjeta 4579 ****fue exitoso, disfruta de tu membresía.</string>
     <string name="subsStep4Start">Comenzar</string>
 
+    <!--Actual Subscription Activity-->
+    <string name="actualSubsTittle">Mi suscripción</string>
+    <string name="actualSubsMsg1">Cuentas con una suscripción desde 20/07/2022 hasta 20/08/2022</string>
+    <string name="actualSubsMsg2">Último pago realizado en fecha 20/07/2022</string>
+    <string name="actualSubsCancel">Cancelar suscripción</string>
+
+    <!--Actual Subscription Cancel Subs Activity-->
+    <string name="actualSubsCancelMsg">¿Estás seguro que deseas cancelar tu suscripción?</string>
+    <string name="actualSubsConfirm">Confirmar</string>
+    <string name="actualSubsNoCancel">Cancelar</string>
+
+    <!--Actual Subscription Cancel Subs Confirm Activity-->
+    <string name="actualSubsCancelConfirm1">Ya no se te cobrará tu suscripción de tu tarjeta registrada</string>
+    <string name="actualSubsCancelConfirm2">Tu membresía termina la fecha 20/08/2022</string>
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -93,6 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String address = "";
                 int cellphone = 0;
                 String birthdate = "1/1/1900";
+                int status = 0;
 
                 progressBar.setVisibility(View.VISIBLE);
                 mAuth.createUserWithEmailAndPassword(email, password)
@@ -100,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    User user = new User(name, email, address, cellphone, birthdate);
+                                    User user = new User(name, email, address, cellphone, birthdate, status);
 
                                     FirebaseDatabase.getInstance().getReference("Users").
                                             child(FirebaseAuth.getInstance().getCurrentUser().getUid())
