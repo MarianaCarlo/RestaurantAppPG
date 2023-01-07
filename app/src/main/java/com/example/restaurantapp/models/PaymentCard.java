@@ -4,14 +4,14 @@ import java.math.BigInteger;
 
 public class PaymentCard {
     private String cardName;
-    private BigInteger cardNumber;
+    private String cardNumber;
     private String cardDate;
     private int cardCVV;
 
     public PaymentCard() {
     }
 
-    public PaymentCard(String cardName, BigInteger cardNumber, String cardDate, int cardCVV) {
+    public PaymentCard(String cardName, String cardNumber, String cardDate, int cardCVV) {
         this.cardName = cardName;
         this.cardNumber = cardNumber;
         this.cardDate = cardDate;
@@ -26,11 +26,11 @@ public class PaymentCard {
         this.cardName = cardName;
     }
 
-    public BigInteger getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(BigInteger cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 

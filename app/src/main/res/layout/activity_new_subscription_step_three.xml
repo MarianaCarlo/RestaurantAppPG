@@ -119,7 +119,7 @@
                 android:textColor="@color/dark"
                 app:cornerRadius="10dp"
                 android:textAllCaps="false"
-                android:id="@+id/cancelSubscription"/>
+                android:id="@+id/noConfirmSubscription"/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"

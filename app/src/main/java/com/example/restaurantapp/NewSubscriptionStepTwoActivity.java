@@ -53,6 +53,12 @@ public class NewSubscriptionStepTwoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NewSubscriptionStepTwoActivity.this, NewSubscriptionStepThreeActivity.class);
+                intent.putExtra("message_name", strNameCard);
+                intent.putExtra("message_number", strNumberCard);
+                intent.putExtra("message_month", strMonthCard);
+                intent.putExtra("message_year", strYearCard);
+                intent.putExtra("message_cvv", strCVVCard);
+
                 startActivity(intent);
             }
         });
