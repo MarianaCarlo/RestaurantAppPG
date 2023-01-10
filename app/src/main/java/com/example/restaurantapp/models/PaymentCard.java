@@ -7,15 +7,17 @@ public class PaymentCard {
     private String cardNumber;
     private String cardDate;
     private int cardCVV;
+    private String uuidUser;
 
     public PaymentCard() {
     }
 
-    public PaymentCard(String cardName, String cardNumber, String cardDate, int cardCVV) {
+    public PaymentCard(String cardName, String cardNumber, String cardDate, int cardCVV, String uuidUser) {
         this.cardName = cardName;
         this.cardNumber = cardNumber;
         this.cardDate = cardDate;
         this.cardCVV = cardCVV;
+        this.uuidUser = uuidUser;
     }
 
     public String getCardName() {
@@ -49,4 +51,14 @@ public class PaymentCard {
     public void setCardCVV(int cardCVV) {
         this.cardCVV = cardCVV;
     }
+
+    public String getuuidUser() {
+        return uuidUser;
+    }
+
+    public void setuuidUser(String uuidUser) {
+        this.uuidUser = uuidUser;
+    }
+
+
 }

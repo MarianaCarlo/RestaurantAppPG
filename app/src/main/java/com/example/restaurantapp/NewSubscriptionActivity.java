@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +39,9 @@ public class NewSubscriptionActivity extends AppCompatActivity {
                 .cardholderName(CardForm.FIELD_REQUIRED)
                 .actionLabel("Purchase")
                 .setup(NewSubscriptionActivity.this);
+        cardForm.setCardNumberIcon(0);
+        cardForm.setCardholderNameIcon(0);
+        cardForm.getCvvEditText().setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
 
         StateProgressBar stateProgressBar = findViewById(R.id.progressBarNewSuscription);
         //stateProgressBar.setStateDescriptionData(descriptionData);

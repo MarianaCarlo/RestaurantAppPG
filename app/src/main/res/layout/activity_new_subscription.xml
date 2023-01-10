@@ -64,12 +64,56 @@
 
     </LinearLayout>
 
-    <com.braintreepayments.cardform.view.CardForm
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_below="@+id/imagesCards"
-        android:paddingHorizontal="20dp"
-        android:id="@+id/cardForm"/>
+        android:id="@+id/linear3">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="15dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp"
+                android:layout_marginTop="7dp"
+                android:paddingLeft="5dp"
+                android:src="@drawable/ic_card_names"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="13dp"
+                android:paddingLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_card_number"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="13dp"
+                android:paddingLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_card_month"/>
+
+        </LinearLayout>
+
+
+        <com.braintreepayments.cardform.view.CardForm
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="20dp"
+            android:paddingLeft="-30dp"
+            android:theme="@style/MyCard"
+            android:id="@+id/cardForm"/>
+
+    </LinearLayout>
+
+
 
 
 
@@ -79,7 +123,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:paddingHorizontal="50dp"
-        android:layout_below="@+id/cardForm"
+        android:layout_below="@+id/linear3"
         android:backgroundTint="@color/custom"
         android:text="siguiente"
         android:textColor="@color/dark"

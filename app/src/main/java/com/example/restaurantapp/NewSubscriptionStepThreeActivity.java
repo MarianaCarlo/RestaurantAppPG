@@ -75,7 +75,7 @@ public class NewSubscriptionStepThreeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String uuid = UUID.randomUUID().toString().replace("-", "");
-                PaymentCard paymentCard = new PaymentCard(strNameCard, strNumberCard, strMonthCard+"/"+strYearCard, Integer.parseInt(strCVVCard));
+                PaymentCard paymentCard = new PaymentCard(strNameCard, strNumberCard, strMonthCard+"/"+strYearCard, Integer.parseInt(strCVVCard), userID);
                 referenceCards.child(uuid).setValue(paymentCard);
 
                 Intent intent = new Intent(NewSubscriptionStepThreeActivity.this, NewSubscriptionStepFourActivity.class);

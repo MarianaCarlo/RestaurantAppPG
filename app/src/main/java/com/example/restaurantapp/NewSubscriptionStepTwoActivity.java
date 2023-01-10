@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class NewSubscriptionStepTwoActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    public TextView getCardName, getCardNumber, getCardMonth, getCardYear, getCardCVV;
+    public TextView getCardName, getCardNumber, getCardMonthYear, getCardCVV;
     private Button btnNextStepTwo;
 
     @Override
@@ -31,8 +31,7 @@ public class NewSubscriptionStepTwoActivity extends AppCompatActivity {
 
         getCardName = findViewById(R.id.getNameCard);
         getCardNumber = findViewById(R.id.getNumberCard);
-        getCardMonth = findViewById(R.id.getMonthCard);
-        getCardYear = findViewById(R.id.getYearCard);
+        getCardMonthYear = findViewById(R.id.getMonthYearCard);
         getCardCVV = findViewById(R.id.getCVVCard);
 
         Intent intent = getIntent();
@@ -44,8 +43,7 @@ public class NewSubscriptionStepTwoActivity extends AppCompatActivity {
 
         getCardName.setText(strNameCard);
         getCardNumber.setText(strNumberCard);
-        getCardMonth.setText(strMonthCard);
-        getCardYear.setText(strYearCard);
+        getCardMonthYear.setText(strMonthCard + "/" + strYearCard);
         getCardCVV.setText(strCVVCard);
 
 
